@@ -1,13 +1,10 @@
 <template>
-  <hello-world />
+  <h1>OPtions</h1>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: { HelloWorld }
+  name: 'Options'
 }
 </script>
 
