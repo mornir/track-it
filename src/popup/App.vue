@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-xl">
     <p>{{ defaultText }}</p>
     <p>Abstinence: {{ abstinenceDuration }}</p>
   </div>
@@ -58,9 +58,5 @@ export default {
 html {
   width: 400px;
   height: 400px;
-}
-
-p {
-  font-size: 20px;
 }
 </style>
