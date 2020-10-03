@@ -73,14 +73,9 @@ export default {
       try {
         const results = await Promise.all(urlsPromises)
 
-        const {
-          firstTimestamp,
-          secondTimestamp,
-          startDate,
-          diff,
-        } = getLongestStreak(results)
-
-        console.log({ firstTimestamp, secondTimestamp, startDate, diff })
+        const { firstTimestamp, secondTimestamp, startDate } = getLongestStreak(
+          results
+        )
 
         this.streakFromDate = format(new Date(startDate), 'dd.MM.yyyy')
         this.longestStreak = formatDistance(
