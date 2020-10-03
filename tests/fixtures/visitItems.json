@@ -1,0 +1,1198 @@
+[
+  [
+    {
+      "id": "36429",
+      "referringVisitId": "172896",
+      "transition": "typed",
+      "visitId": "172897",
+      "visitTime": 1594228521965.632
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "172950",
+      "visitTime": 1594232825441.621
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "174124",
+      "transition": "link",
+      "visitId": "174125",
+      "visitTime": 1594478112061.237
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175185",
+      "visitTime": 1594557208882.955
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175189",
+      "visitTime": 1594557280231.2979
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "188478",
+      "visitTime": 1596904646948.112
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "194973",
+      "visitTime": 1597762872857.374
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "206536",
+      "visitTime": 1599503007133.6
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "207083",
+      "visitTime": 1599576908322.707
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "207093",
+      "visitTime": 1599577272009.454
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "207103",
+      "visitTime": 1599577766527.481
+    },
+    {
+      "id": "36429",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "216629",
+      "visitTime": 1601645367115.602
+    }
+  ],
+  [
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172462",
+      "visitTime": 1594125399723.5461
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172467",
+      "visitTime": 1594125552400.989
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172753",
+      "visitTime": 1594152316637.1912
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172754",
+      "visitTime": 1594152447422.28
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172755",
+      "visitTime": 1594152555093.645
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172760",
+      "visitTime": 1594182969952.1301
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172761",
+      "visitTime": 1594183062272.764
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172762",
+      "visitTime": 1594183096778.845
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172963",
+      "visitTime": 1594271465900.6902
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "172964",
+      "visitTime": 1594271490058.7202
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175290",
+      "visitTime": 1594575882325.146
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175416",
+      "visitTime": 1594617664044.009
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175417",
+      "visitTime": 1594617721898.112
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175418",
+      "visitTime": 1594617789426.604
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175419",
+      "visitTime": 1594617826704.073
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "175429",
+      "visitTime": 1594672380712.7139
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "176230",
+      "visitTime": 1594789618443.769
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "176231",
+      "visitTime": 1594790065975.232
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "176232",
+      "visitTime": 1594793247772.817
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "177711",
+      "visitTime": 1595178052487.373
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "177712",
+      "visitTime": 1595178303031.645
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "177713",
+      "visitTime": 1595178464033.972
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "177916",
+      "visitTime": 1595183234698.0132
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "177917",
+      "visitTime": 1595183389142.596
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "177918",
+      "visitTime": 1595183400272.833
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "180610",
+      "visitTime": 1595395211873.579
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "180611",
+      "visitTime": 1595395693840.895
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "180612",
+      "visitTime": 1595395753131.398
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "186338",
+      "visitTime": 1595986576945.2551
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "186339",
+      "visitTime": 1595986627662.4639
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "186407",
+      "visitTime": 1596086097707.705
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "186409",
+      "visitTime": 1596087074636.338
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "186668",
+      "visitTime": 1596115426379.542
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "186670",
+      "visitTime": 1596115457267.684
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "188444",
+      "visitTime": 1596887129182.966
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "188445",
+      "visitTime": 1596887165049.9402
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "188446",
+      "visitTime": 1596887183147.347
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "188970",
+      "transition": "typed",
+      "visitId": "188971",
+      "visitTime": 1596993120398.119
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "195869",
+      "visitTime": 1598009147558.0498
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "197677",
+      "visitTime": 1598127850041.729
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "197680",
+      "visitTime": 1598127998178.648
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "199262",
+      "visitTime": 1598257614143.378
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "201257",
+      "visitTime": 1598373466984.564
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "auto_bookmark",
+      "visitId": "211329",
+      "visitTime": 1599570605921
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "auto_bookmark",
+      "visitId": "211330",
+      "visitTime": 1599570708744.858
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214789",
+      "visitTime": 1601383980119.988
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214790",
+      "visitTime": 1601384031527.0532
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214791",
+      "visitTime": 1601384099143.769
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214792",
+      "visitTime": 1601384176044.102
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214793",
+      "visitTime": 1601384217298.1501
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214794",
+      "visitTime": 1601384237492.834
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214795",
+      "visitTime": 1601384281303.214
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "214796",
+      "visitTime": 1601384298547.184
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "216635",
+      "transition": "typed",
+      "visitId": "216636",
+      "visitTime": 1601646771895.877
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "216637",
+      "transition": "link",
+      "visitId": "216704",
+      "visitTime": 1601654237752.9868
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "216637",
+      "transition": "link",
+      "visitId": "216706",
+      "visitTime": 1601654290611.923
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "217113",
+      "transition": "typed",
+      "visitId": "217114",
+      "visitTime": 1601733315820.406
+    },
+    {
+      "id": "3639",
+      "referringVisitId": "217317",
+      "transition": "typed",
+      "visitId": "217318",
+      "visitTime": 1601748386829.531
+    }
+  ],
+  [
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "173817",
+      "visitTime": 1594471495273.573
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "173818",
+      "visitTime": 1594471495735.51
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "177318",
+      "visitTime": 1595156641999.082
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "177319",
+      "visitTime": 1595156642568.5042
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "178662",
+      "visitTime": 1595247756453.248
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "178663",
+      "visitTime": 1595247756909
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "178997",
+      "visitTime": 1595255727462.127
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "178998",
+      "visitTime": 1595255727932.562
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "181758",
+      "visitTime": 1595662716888.58
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "181759",
+      "visitTime": 1595662717510.294
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "181759",
+      "transition": "link",
+      "visitId": "181760",
+      "visitTime": 1595662720417.272
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "181760",
+      "transition": "link",
+      "visitId": "181761",
+      "visitTime": 1595662720645.5269
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "181768",
+      "visitTime": 1595662937347.9011
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "181769",
+      "visitTime": 1595662937904.2302
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "181805",
+      "visitTime": 1595663671593.662
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "181806",
+      "visitTime": 1595663672159.148
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "182097",
+      "visitTime": 1595673386158.256
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "182098",
+      "visitTime": 1595673386656.986
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "182143",
+      "visitTime": 1595675079887.226
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "183471",
+      "visitTime": 1595768890427.768
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "183472",
+      "visitTime": 1595768890894.86
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "185125",
+      "visitTime": 1595857128202.081
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "185126",
+      "visitTime": 1595857128698.102
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "185844",
+      "visitTime": 1595935851708.779
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "185845",
+      "visitTime": 1595935852242.533
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "188274",
+      "visitTime": 1596826111431.426
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "188275",
+      "visitTime": 1596826112137.715
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "188714",
+      "visitTime": 1596975185447.746
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "188715",
+      "visitTime": 1596975186025.034
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "194153",
+      "visitTime": 1597206760050.467
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "194154",
+      "visitTime": 1597206760472.053
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "196524",
+      "visitTime": 1598079347180.1382
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "196525",
+      "visitTime": 1598079347620.929
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "197083",
+      "visitTime": 1598098707069.207
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "197084",
+      "visitTime": 1598098707458.499
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "197098",
+      "visitTime": 1598099211572.6572
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "197099",
+      "visitTime": 1598099211963.482
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "197584",
+      "visitTime": 1598121040922.321
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "197585",
+      "visitTime": 1598121041304.345
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "197611",
+      "visitTime": 1598121446236.209
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "197612",
+      "visitTime": 1598121446598.0898
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "202151",
+      "visitTime": 1598431077647.427
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "202152",
+      "visitTime": 1598431078360.053
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "202323",
+      "visitTime": 1598775318713.325
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "202324",
+      "visitTime": 1598775319099.336
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "202640",
+      "visitTime": 1598780101892.73
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "202641",
+      "visitTime": 1598780102263.4038
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "203907",
+      "visitTime": 1599072032679.96
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "203908",
+      "visitTime": 1599072033053.394
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "204230",
+      "visitTime": 1599157174253.733
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "204231",
+      "visitTime": 1599157174677.762
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "204898",
+      "visitTime": 1599326349662.138
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "204977",
+      "visitTime": 1599328827622.932
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "204978",
+      "visitTime": 1599328827812.13
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "205211",
+      "visitTime": 1599372462010.692
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "205212",
+      "visitTime": 1599372462360.067
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "205230",
+      "visitTime": 1599373096545.342
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "205231",
+      "visitTime": 1599373096878.801
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "205252",
+      "visitTime": 1599374032896.1
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "205253",
+      "visitTime": 1599374033233.468
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "206792",
+      "visitTime": 1599555313470.468
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "206793",
+      "visitTime": 1599555313868.539
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "206795",
+      "visitTime": 1599555446184.3481
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "206796",
+      "visitTime": 1599555446542.774
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "206885",
+      "visitTime": 1599558946687.761
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "206886",
+      "visitTime": 1599558947074.765
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "207006",
+      "visitTime": 1599562721187.471
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "207007",
+      "visitTime": 1599562721565.9438
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "207354",
+      "visitTime": 1599669938702.593
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "207355",
+      "visitTime": 1599669939069.598
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "207470",
+      "visitTime": 1599673315385.914
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "207471",
+      "visitTime": 1599673315736.726
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "207779",
+      "visitTime": 1599754811136.487
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "207780",
+      "visitTime": 1599754811487.15
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "208193",
+      "visitTime": 1599896882463.4932
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "208194",
+      "visitTime": 1599896882821.7012
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "208829",
+      "visitTime": 1599915466603.055
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "208830",
+      "visitTime": 1599915466921.03
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "208990",
+      "visitTime": 1599935049597.62
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "208991",
+      "visitTime": 1599935049985.843
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "209270",
+      "visitTime": 1600016711401.541
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "209271",
+      "visitTime": 1600016711760.053
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "210650",
+      "visitTime": 1600152552633.3188
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "210651",
+      "visitTime": 1600152552977.4448
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "212192",
+      "visitTime": 1600447455398.907
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "212193",
+      "visitTime": 1600447455833.946
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "212199",
+      "visitTime": 1600447529067.5881
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "212200",
+      "visitTime": 1600447529443.713
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "215594",
+      "visitTime": 1601477119467.272
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "215595",
+      "visitTime": 1601477120510.084
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "216382",
+      "visitTime": 1601623238909.641
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "216383",
+      "visitTime": 1601623239277.174
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "216722",
+      "visitTime": 1601654587545.1592
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "216723",
+      "visitTime": 1601654587925.946
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "217172",
+      "visitTime": 1601737689887.974
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "217173",
+      "visitTime": 1601737690275.491
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "217182",
+      "visitTime": 1601737758933.347
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "217183",
+      "visitTime": 1601737759284.903
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "typed",
+      "visitId": "217326",
+      "visitTime": 1601749067706.951
+    },
+    {
+      "id": "1340",
+      "referringVisitId": "0",
+      "transition": "link",
+      "visitId": "217327",
+      "visitTime": 1601749068036.26
+    }
+  ]
+]
