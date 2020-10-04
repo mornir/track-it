@@ -1,9 +1,12 @@
 <template>
-  <div class="text-xl">
-    <p>{{ defaultText }}</p>
-    <p>Abstinence: {{ abstinenceDuration }}</p>
-    <button @click="getLongestStreak">Compute longest streak</button>
-    <p>Longest streak (since {{ streakFromDate }}): {{ longestStreak }}</p>
+  <div class="px-4 py-6 text-xl text-gray-800 whitespace-no-wrap bg-gray-200">
+    <p class="mb-6 font-light">
+      Abstinence <span class="block font-black">{{ abstinenceDuration }}</span>
+    </p>
+
+    <p class="font-light">
+      Longest streak <span class="block font-black">{{ longestStreak }}</span>
+    </p>
   </div>
 </template>
 
@@ -26,9 +29,9 @@ export default {
       latestVisitSites: [],
       latestVisitSite: {},
       latestVisitDate: null,
-      abstinenceDuration: null,
+      abstinenceDuration: '',
       streakFromDate: 0,
-      longestStreak: 0,
+      longestStreak: '',
     }
   },
   async mounted() {
@@ -55,6 +58,8 @@ export default {
     } catch (error) {
       console.error(error)
     }
+
+    this.getLongestStreak()
   },
   computed: {
     defaultText() {
@@ -83,13 +88,19 @@ export default {
         console.error(error)
       }
     },
+    openOptionsPage() {
+      browser.runtime.openOptionsPage()
+    },
   },
 }
 </script>
 
 <style>
-html {
-  width: 400px;
-  height: 400px;
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;900&display=swap');
+
+body {
+  font-family: 'Chivo', sans-serif;
+  /*min-width: 220px;
+  max-width: 500px */
 }
 </style>
