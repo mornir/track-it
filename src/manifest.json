@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__",
-  "homepage_url": "http://localhost:8080/",
-  "description": "Web extension to keep track on addictive websites",
+  "homepage_url": "https://github.com/mornir/track-it",
+  "description": "Web extension to track time wasted on addictive websites",
   "default_locale": "en",
   "permissions": ["<all_urls>", "*://*/*", "history", "storage"],
   "icons": {

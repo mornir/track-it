@@ -1,7 +1,7 @@
 {
   "name": "track-it",
   "version": "0.1.0",
-  "description": "Web extension to keep track on addictive websites",
+  "description": "Web extension to track time wasted on addictive websites",
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
