@@ -1,6 +1,7 @@
 {
-  "name": "dry-spell-final",
+  "name": "track-it",
   "version": "0.1.0",
+  "description": "Web extension to keep track on addictive websites",
   "private": true,
   "scripts": {
     "build": "vue-cli-service build",
