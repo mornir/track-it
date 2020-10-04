@@ -1,10 +1,19 @@
 <template>
-  <h1>OPtions</h1>
+  <div>
+    <form @submit="addURL">
+      <h1>Options</h1>
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Options',
+  data() {
+    return {
+      urls: [],
+    }
+  },
 }
 </script>
 
