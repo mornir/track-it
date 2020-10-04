@@ -32,12 +32,11 @@ export default {
     }
   },
   async mounted() {
-    //browser.runtime.sendMessage({})
-
     const urlsPromises = this.urls.map(url =>
       browser.history.search({
         text: url,
         maxResults: 1,
+        startTime: 0,
       })
     )
 
@@ -72,11 +71,9 @@ export default {
 
       try {
         const results = await Promise.all(urlsPromises)
-
         const { firstTimestamp, secondTimestamp, startDate } = getLongestStreak(
           results
         )
-
         this.streakFromDate = format(new Date(startDate), 'dd.MM.yyyy')
         this.longestStreak = formatDistance(
           new Date(firstTimestamp),
