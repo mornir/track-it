@@ -13,11 +13,7 @@ module.exports = {
   },
   pluginOptions: {
     browserExtension: {
-      componentOptions: {
-        background: {
-          entry: 'src/background.js',
-        },
-      },
+      componentOptions: {},
     },
   },
 }
