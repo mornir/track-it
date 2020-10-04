@@ -23,7 +23,7 @@
       </svg>
     </button>
     <p class="mb-6 font-light">
-      Abstinence <span class="block font-black">{{ abstinenceDuration }}</span>
+      Last visit <span class="block font-black">{{ abstinenceDuration }}</span>
     </p>
 
     <p class="font-light">
