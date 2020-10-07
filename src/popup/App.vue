@@ -43,11 +43,7 @@ export default {
   name: 'Popup',
   data() {
     return {
-      urls: [
-        'https://www.koreus.com/',
-        'https://www.letemps.ch/',
-        'https://tailwindcss.com/',
-      ],
+      urls: [],
       latestVisitSites: [],
       latestVisitSite: {},
       latestVisitDate: null,
@@ -57,6 +53,13 @@ export default {
     }
   },
   async mounted() {
+    this.urls = await this.getURLListfromStorage()
+
+    if (this.urls.length === 0) {
+      this.abstinenceDuration = 'No URLs'
+      return
+    }
+
     const urlsPromises = this.urls.map(url =>
       browser.history.search({
         text: url,
@@ -106,6 +109,14 @@ export default {
           new Date(firstTimestamp),
           new Date(secondTimestamp)
         )
+      } catch (error) {
+        console.error(error)
+      }
+    },
+    async getURLListfromStorage() {
+      try {
+        const { urls } = await browser.storage.local.get()
+        return Array.isArray(urls) ? urls : []
       } catch (error) {
         console.error(error)
       }
