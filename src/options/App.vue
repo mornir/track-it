@@ -31,8 +31,8 @@ export default {
       error: null,
     }
   },
-  mounted() {
-    this.getURLListfromStorage()
+  async mounted() {
+    this.urls = await this.getURLListfromStorage()
   },
   methods: {
     addURL() {
@@ -46,9 +46,7 @@ export default {
     async getURLListfromStorage() {
       try {
         const { urls } = await browser.storage.local.get()
-        if (Array.isArray(urls)) {
-          this.urls = urls
-        }
+        return Array.isArray(urls) ? urls : []
       } catch (error) {
         console.error(error)
       }
