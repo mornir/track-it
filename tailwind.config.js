@@ -5,7 +5,11 @@ module.exports = {
   },
   purge: ['./public/**/*.html', './src/**/*.vue'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        blackish: '#333333',
+      },
+    },
   },
   variants: {},
   plugins: [],

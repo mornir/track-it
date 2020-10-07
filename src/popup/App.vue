@@ -23,11 +23,13 @@
       </svg>
     </button>
     <p class="mb-6 font-light">
-      Last visit <span class="block font-black">{{ abstinenceDuration }}</span>
+      Last visit
+      <span class="block font-blackish">{{ abstinenceDuration }}</span>
     </p>
 
     <p class="font-light">
-      Longest streak <span class="block font-black">{{ longestStreak }}</span>
+      Longest streak
+      <span class="block font-blackish">{{ longestStreak }}</span>
     </p>
   </div>
 </template>
