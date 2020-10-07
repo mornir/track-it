@@ -10,6 +10,14 @@
         {{ url }} <button @click="deleteURL(url)">X</button>
       </li>
     </ul>
+    <p>Yikes! An error occured:</p>
+    <pre>{{ error }}</pre>
+    <p>
+      You can report the error here:
+      <a href="https://github.com/mornir/track-it/issues/new"
+        >https://github.com/mornir/track-it/issues/new</a
+      >
+    </p>
   </div>
 </template>
 
@@ -20,6 +28,7 @@ export default {
     return {
       urls: [],
       url: '',
+      error: null,
     }
   },
   mounted() {
