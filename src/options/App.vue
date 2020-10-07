@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit="addURL">
+    <form @submit.prevent="addURL">
       <h1>Options</h1>
       <input type="url" required v-model="url" />
       <button type="submit">Add URL</button>
@@ -44,10 +44,9 @@ export default {
         console.error(error)
       }
     },
-    async saveURLListtoStorage() {
+    saveURLListtoStorage() {
       try {
-        await browser.storage.local.set(this.urls)
-        this.getURLListfromStorage()
+        browser.storage.local.set({ urls: this.urls })
       } catch (error) {
         console.error(error)
       }
