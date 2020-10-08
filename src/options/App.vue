@@ -1,49 +1,111 @@
 <template>
-  <div class="min-h-screen bg-gray-200" style="width: 400px">
+  <div class="min-h-screen bg-gray-200 text-blackish" style="width: 400px">
     <div class="px-4 py-6">
-      <h1 class="sr-only">Options</h1>
-      <form @submit.prevent="addURL">
-        <h2 class="mb-2 text-2xl">Tracked URLs</h2>
-        <div class="flex mb-3">
-          <input type="url" required v-model="url" class="flex-1 px-1 py-2" />
-          <button type="submit" class="px-4 py-2 text-white bg-blackish">
-            Add
-          </button>
+      <section class="mb-8">
+        <h1 class="sr-only">Options</h1>
+        <form @submit.prevent="addURL">
+          <h2 class="mb-2 text-2xl">Tracked URLs</h2>
+          <div class="flex mb-3">
+            <input
+              type="url"
+              required
+              v-model="url"
+              class="flex-1 px-2 text-base"
+            />
+            <button
+              type="submit"
+              class="px-4 py-1 text-lg text-white bg-blackish hover:bg-gray-700 focus:hover:bg-gray-700"
+            >
+              Add
+            </button>
+          </div>
+        </form>
+        <ul class="h-64 overflow-scroll bg-white">
+          <li v-for="url in urls" :key="url" class="flex py-1 even:bg-gray-300">
+            <button @click="deleteURL(url)" class="mx-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                class="w-4 h-4 hover:text-red-600"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+            <span class="text-base italic whitespace-no-wrap">{{
+              removeProtocol(url)
+            }}</span>
+          </li>
+        </ul>
+        <div v-if="error">
+          <p>Yikes! An error occured:</p>
+          <pre>{{ error }}</pre>
+          <p>
+            You can report the error here:
+            <a href="https://github.com/mornir/track-it/issues/new"
+              >https://github.com/mornir/track-it/issues/new</a
+            >
+          </p>
         </div>
-      </form>
-      <ul>
-        <li v-for="url in urls" :key="url">
-          <span class="mr-2 text-base italic break-words">{{
-            removeProtocol(url)
-          }}</span>
-          <button @click="deleteURL(url)">
+      </section>
+      <section class="mb-8">
+        <h2 class="mb-2 text-2xl">Longest Streak</h2>
+        <p class="text-lg">
+          Between 03.08.2020<span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
-              class="w-4 h-4"
+              class="inline-block w-4 h-4"
               fill="currentColor"
             >
               <path
                 fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
                 clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-        </li>
-      </ul>
-      <div v-if="error">
-        <p>Yikes! An error occured:</p>
-        <pre>{{ error }}</pre>
-        <p>
-          You can report the error here:
-          <a href="https://github.com/mornir/track-it/issues/new"
-            >https://github.com/mornir/track-it/issues/new</a
-          >
+              /></svg
+          ></span>
+          and now, your longest streak started on Wednesday the
+          <b class="whitespace-no-wrap">9th September 2020</b> at 10:32 and
+          ended on Thursday the
+          <b class="whitespace-no-wrap">12th September 2020</b>
+          at 17:55.
         </p>
-      </div>
+        <p class="mb-2 text-lg">
+          It lasted for
+          <b class="whitespace-no-wrap">5 days, 4 hours and 3 minutes</b>.
+        </p>
+      </section>
+      <section>
+        <h2 class="mb-2 text-2xl">About this extension</h2>
+
+        <p class="text-lg">
+          The code of this extension is open-source on GitHub. Feature requests
+          and bug reports can
+        </p>
+
+        <p class="text-lg">
+          The "logo" of the extension was made by
+          <a
+            class="italic underline"
+            href="https://www.flaticon.com/authors/bqlqn"
+            title="bqlqn"
+            >bqlqn</a
+          >
+          from
+          <a
+            class="italic underline"
+            href="https://www.flaticon.com/"
+            title="Flaticon"
+          >
+            www.flaticon.com</a
+          >.
+        </p>
+      </section>
     </div>
-    <div></div>
   </div>
 </template>
 
