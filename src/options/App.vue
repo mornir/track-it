@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-200 text-blackish" style="width: 400px">
-    <div class="px-4 py-6">
+  <div class="min-h-screen bg-gray-200 text-blackish" style="width: 395px">
+    <div class="px-4 pt-4 pb-6">
       <section class="mb-8">
         <h1 class="sr-only">Options</h1>
         <form @submit.prevent="addURL">
@@ -20,7 +20,7 @@
             </button>
           </div>
         </form>
-        <ul class="h-64 overflow-scroll bg-white">
+        <ul class="h-64 overflow-auto bg-white">
           <li v-for="url in urls" :key="url" class="flex py-1 even:bg-gray-300">
             <button @click="deleteURL(url)" class="mx-2">
               <svg
@@ -55,8 +55,9 @@
       <section class="mb-8">
         <h2 class="mb-2 text-2xl">Longest Streak</h2>
         <p class="text-lg">
-          Between 03.08.2020<span>
-            <svg
+          Between
+          <span title="earliest entry in your browsing history"
+            >03.08.2020<svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               class="inline-block w-4 h-4"
@@ -91,6 +92,8 @@
           The "logo" of the extension was made by
           <a
             class="italic underline"
+            target="_blank"
+            rel="noopener"
             href="https://www.flaticon.com/authors/bqlqn"
             title="bqlqn"
             >bqlqn</a
@@ -98,6 +101,8 @@
           from
           <a
             class="italic underline"
+            target="_blank"
+            rel="noopener"
             href="https://www.flaticon.com/"
             title="Flaticon"
           >
