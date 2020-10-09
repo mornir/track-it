@@ -4,13 +4,13 @@
       <section class="mb-8">
         <h1 class="sr-only">Options</h1>
         <form @submit.prevent="addURL">
-          <h2 class="mb-2 text-2xl">Tracked URLs</h2>
+          <h2 class="mb-2 text-2xl ">Tracked URLs</h2>
           <div class="flex mb-3">
             <input
               type="url"
               required
               v-model="url"
-              class="flex-1 px-2 text-base"
+              class="flex-1 px-2 text-base border-2 border-blackish"
             />
             <button
               type="submit"
@@ -20,7 +20,7 @@
             </button>
           </div>
         </form>
-        <ul class="h-64 overflow-auto bg-white">
+        <ul class="h-64 overflow-auto bg-white border-2 border-blackish">
           <li v-for="url in urls" :key="url" class="flex py-1 even:bg-gray-300">
             <button @click="deleteURL(url)" class="mx-2">
               <svg
