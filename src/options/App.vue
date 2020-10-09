@@ -5,12 +5,13 @@
         <h1 class="sr-only">Options</h1>
         <form @submit.prevent="addURL">
           <h2 class="mb-2 text-2xl ">Tracked URLs</h2>
-          <div class="flex mb-3">
+          <div class="flex">
             <input
               type="url"
               required
               v-model="url"
-              class="flex-1 px-2 text-base border-2 border-blackish"
+              class="flex-1 px-2 text-base border-t-2 border-l-2 border-blackish focus:outline-none"
+              placeholder="Type the complete URL"
             />
             <button
               type="submit"
@@ -20,8 +21,14 @@
             </button>
           </div>
         </form>
-        <ul class="h-64 overflow-auto bg-white border-2 border-blackish">
-          <li v-for="url in urls" :key="url" class="flex py-1 even:bg-gray-300">
+        <ul
+          class="h-64 overflow-auto bg-gray-200 border-b-2 border-l-2 border-r-2 border-blackish"
+        >
+          <li
+            v-for="url in urls"
+            :key="url"
+            class="flex py-1 odd:bg-gray-300 even:bg-gray-100"
+          >
             <button @click="deleteURL(url)" class="mx-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

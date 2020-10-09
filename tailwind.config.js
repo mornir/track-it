@@ -12,7 +12,7 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ['even', 'hover', 'focus'],
+    backgroundColor: ['odd', 'hover', 'focus', 'even'],
   },
   plugins: [],
 }
