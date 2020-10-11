@@ -165,6 +165,7 @@ export default {
   methods: {
     addURL() {
       this.urls.unshift(this.url)
+      this.url = ''
       this.saveURLListtoStorage()
     },
     deleteURL(url) {
