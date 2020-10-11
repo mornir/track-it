@@ -24,12 +24,12 @@
     </button>
     <p class="mb-6 font-light">
       Last visit
-      <span class="block font-blackish">{{ abstinenceDuration }}</span>
+      <b class="block font-black font-blackish">{{ abstinenceDuration }}</b>
     </p>
 
     <p class="font-light">
       Longest streak
-      <span class="block font-blackish">{{ longestStreak }}</span>
+      <b class="block font-black font-blackish">{{ longestStreak }}</b>
     </p>
   </div>
 </template>
