@@ -78,10 +78,10 @@
               /></svg
           ></span>
           and now, your longest streak started on {{ dayOfWeek.start }} the
-          <b class="whitespace-no-wrap">{{ startDate }}</b> at 10:32 and ended
-          on {{ dayOfWeek.end }} the
+          <b class="whitespace-no-wrap">{{ startDate }}</b> at
+          {{ startTime }} and ended on {{ dayOfWeek.end }} the
           <b class="whitespace-no-wrap">{{ endDate }}</b>
-          at 17:55.
+          at {{ endTime }}.
         </p>
         <p class="mb-2 text-lg">
           It lasted for
@@ -163,8 +163,8 @@ export default {
     this.startDate = format(new Date(firstTimestamp), 'eo LLLL yyyy')
     this.endDate = format(new Date(secondTimestamp), 'eo LLLL yyyy')
 
-    this.startTime = format(new Date(firstTimestamp), 'eo LLLL yyyy')
-    this.endTime = format(new Date(secondTimestamp), 'eo LLLL yyyy')
+    this.startTime = format(new Date(firstTimestamp), 'h:m')
+    this.endTime = format(new Date(secondTimestamp), 'h:m')
 
     this.longestStreak = formatDistance(
       new Date(firstTimestamp),
