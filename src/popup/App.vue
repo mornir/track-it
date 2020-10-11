@@ -2,14 +2,14 @@
   <div
     class="px-4 pt-4 pb-4 text-xl text-gray-800 whitespace-no-wrap bg-gray-200"
   >
-    <button @click="openOptionsPage" class="block ml-auto">
+    <button @click="openOptionsPage" class="block mb-2 ml-auto">
       <SettingsIcon class="w-6 h-6" />
     </button>
     <p class="mb-6 font-light">
       Last visit
       <b class="block font-black font-blackish">{{ abstinenceDuration }}</b>
     </p>
-    <p class="font-light">
+    <p class="font-light" v-if="longestStreak">
       Longest streak
       <b class="block font-black font-blackish">{{ longestStreak }}</b>
     </p>
@@ -67,18 +67,26 @@ export default {
 
       this.latestVisitDate = new Date(this.latestVisitSite.lastVisitTime)
       this.abstinenceDuration = formatDistance(this.latestVisitDate, new Date())
+
+      /** Streak **/
+
+      const streak = await this.getLongestStreak(this.urls)
+
+      if (!streak) {
+        this.longestStreak = ''
+        return
+      }
+
+      const { firstTimestamp, secondTimestamp } = streak
+
+      this.longestStreak = formatDistance(
+        new Date(firstTimestamp),
+        new Date(secondTimestamp)
+      )
     } catch (error) {
+      this.longestStreak = ''
       console.error(error)
     }
-
-    const { firstTimestamp, secondTimestamp } = await this.getLongestStreak(
-      this.urls
-    )
-
-    this.longestStreak = formatDistance(
-      new Date(firstTimestamp),
-      new Date(secondTimestamp)
-    )
   },
   computed: {
     defaultText() {

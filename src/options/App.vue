@@ -50,22 +50,25 @@
       </section>
       <section class="mb-8">
         <h2 class="mb-2 text-2xl">Longest Streak</h2>
-        <p class="text-lg">
-          Between
-          <span title="earliest entry in your browsing history"
-            >{{ streakFromDate }}<InfoIcon class="inline-block w-4 h-4"
-          /></span>
-          and now, your longest streak started on {{ dayOfWeek.start }} the
-          <b class="whitespace-no-wrap">{{ startDate }}</b> at
-          {{ startTime }} and ended on {{ dayOfWeek.end }} the
-          <b class="whitespace-no-wrap">{{ endDate }}</b>
-          at {{ endTime }}.
-        </p>
-        <p class="mb-2 text-lg">
-          It lasted for
-          <b class="whitespace-no-wrap">{{ longestStreak }}</b
-          >.
-        </p>
+        <div v-if="longestStreak">
+          <p class="text-lg">
+            Between
+            <span title="earliest entry in your browsing history"
+              >{{ streakFromDate }}<InfoIcon class="inline-block w-4 h-4"
+            /></span>
+            and now, your longest streak started on {{ dayOfWeek.start }} the
+            <b class="whitespace-no-wrap">{{ startDate }}</b> at
+            {{ startTime }} and ended on {{ dayOfWeek.end }} the
+            <b class="whitespace-no-wrap">{{ endDate }}</b>
+            at {{ endTime }}.
+          </p>
+          <p class="mb-2 text-lg">
+            It lasted for
+            <b class="whitespace-no-wrap">{{ longestStreak }}</b
+            >.
+          </p>
+        </div>
+        <p v-else class="text-lg">No streak recorded yet</p>
       </section>
       <section>
         <h2 class="mb-2 text-2xl">About this extension</h2>
@@ -140,27 +143,36 @@ export default {
     }
   },
   async mounted() {
-    this.urls = await this.getURLListfromStorage()
-    const {
-      firstTimestamp,
-      secondTimestamp,
-      startOfRecording,
-    } = await this.getLongestStreak(this.urls)
+    try {
+      this.urls = await this.getURLListfromStorage()
 
-    this.streakFromDate = format(new Date(startOfRecording), 'dd.MM.yyyy')
-    this.dayOfWeek.start = format(new Date(firstTimestamp), 'iiii')
-    this.dayOfWeek.end = format(new Date(secondTimestamp), 'iiii')
+      const streak = await this.getLongestStreak(this.urls)
 
-    this.startDate = format(new Date(firstTimestamp), 'eo LLLL yyyy')
-    this.endDate = format(new Date(secondTimestamp), 'eo LLLL yyyy')
+      if (!streak) {
+        this.longestStreak = ''
+        return
+      }
 
-    this.startTime = format(new Date(firstTimestamp), 'h:m')
-    this.endTime = format(new Date(secondTimestamp), 'h:m')
+      const { firstTimestamp, secondTimestamp, startOfRecording } = streak
 
-    this.longestStreak = formatDistance(
-      new Date(firstTimestamp),
-      new Date(secondTimestamp)
-    )
+      this.streakFromDate = format(new Date(startOfRecording), 'dd.MM.yyyy')
+      this.dayOfWeek.start = format(new Date(firstTimestamp), 'iiii')
+      this.dayOfWeek.end = format(new Date(secondTimestamp), 'iiii')
+
+      this.startDate = format(new Date(firstTimestamp), 'eo LLLL yyyy')
+      this.endDate = format(new Date(secondTimestamp), 'eo LLLL yyyy')
+
+      this.startTime = format(new Date(firstTimestamp), 'h:m')
+      this.endTime = format(new Date(secondTimestamp), 'h:m')
+
+      this.longestStreak = formatDistance(
+        new Date(firstTimestamp),
+        new Date(secondTimestamp)
+      )
+    } catch (error) {
+      console.error(error)
+      this.longestStreak = ''
+    }
   },
   methods: {
     addURL() {

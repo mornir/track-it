@@ -11,7 +11,7 @@ function getLatestVisitedSite(historyResults = []) {
 
 function getLongestStreak(historyResults = []) {
   const latestVisitSites = historyResults.flat()
-  if (latestVisitSites.length === 0) {
+  if (latestVisitSites.length < 2) {
     return false
   }
 
