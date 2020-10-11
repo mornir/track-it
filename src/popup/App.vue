@@ -35,23 +35,22 @@
 </template>
 
 <script>
-import { formatDistance, format } from 'date-fns'
-import {
-  getLatestVisitedSite,
-  getLongestStreak,
-} from '@/utils/getHistoryFunctions.js'
+import { formatDistance } from 'date-fns'
+import { getLatestVisitedSite } from '@/utils/getHistoryFunctions.js'
+import mixin from '@/utils/mixin.js'
 
 export default {
+  mixins: [mixin],
   name: 'Popup',
   data() {
     return {
-      urls: [],
       latestVisitSites: [],
       latestVisitSite: {},
       latestVisitDate: null,
       abstinenceDuration: '',
-      streakFromDate: 0,
+      urls: [],
       longestStreak: '',
+      streakFromDate: '',
     }
   },
   async mounted() {
@@ -86,7 +85,14 @@ export default {
       console.error(error)
     }
 
-    this.getLongestStreak()
+    const { firstTimestamp, secondTimestamp } = await this.getLongestStreak(
+      this.urls
+    )
+
+    this.longestStreak = formatDistance(
+      new Date(firstTimestamp),
+      new Date(secondTimestamp)
+    )
   },
   computed: {
     defaultText() {
@@ -94,48 +100,9 @@ export default {
     },
   },
   methods: {
-    async getLongestStreak() {
-      const urlsPromises = this.urls.map(url =>
-        browser.history.getVisits({
-          url,
-        })
-      )
-
-      try {
-        const results = await Promise.all(urlsPromises)
-        const { firstTimestamp, secondTimestamp, startDate } = getLongestStreak(
-          results
-        )
-        this.streakFromDate = format(new Date(startDate), 'dd.MM.yyyy')
-        this.longestStreak = formatDistance(
-          new Date(firstTimestamp),
-          new Date(secondTimestamp)
-        )
-      } catch (error) {
-        console.error(error)
-      }
-    },
-    async getURLListfromStorage() {
-      try {
-        const { urls } = await browser.storage.local.get()
-        return Array.isArray(urls) ? urls : []
-      } catch (error) {
-        console.error(error)
-      }
-    },
     openOptionsPage() {
       browser.runtime.openOptionsPage()
     },
   },
 }
 </script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;900&display=swap');
-
-body {
-  font-family: 'Chivo', sans-serif;
-  /*min-width: 220px;
-  max-width: 500px */
-}
-</style>

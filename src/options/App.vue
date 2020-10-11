@@ -64,7 +64,8 @@
         <p class="text-lg">
           Between
           <span title="earliest entry in your browsing history"
-            >03.08.2020<svg
+            >{{ streakFromDate
+            }}<svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               class="inline-block w-4 h-4"
@@ -76,15 +77,16 @@
                 clip-rule="evenodd"
               /></svg
           ></span>
-          and now, your longest streak started on Wednesday the
-          <b class="whitespace-no-wrap">9th September 2020</b> at 10:32 and
-          ended on Thursday the
-          <b class="whitespace-no-wrap">12th September 2020</b>
+          and now, your longest streak started on {{ dayOfWeek.start }} the
+          <b class="whitespace-no-wrap">{{ startDate }}</b> at 10:32 and ended
+          on {{ dayOfWeek.end }} the
+          <b class="whitespace-no-wrap">{{ endDate }}</b>
           at 17:55.
         </p>
         <p class="mb-2 text-lg">
           It lasted for
-          <b class="whitespace-no-wrap">5 days, 4 hours and 3 minutes</b>.
+          <b class="whitespace-no-wrap">{{ longestStreak }}</b
+          >.
         </p>
       </section>
       <section>
@@ -122,17 +124,52 @@
 </template>
 
 <script>
+import { formatDistance, format } from 'date-fns'
+import mixin from '@/utils/mixin.js'
+
 export default {
+  mixins: [mixin],
   name: 'Options',
   data() {
     return {
-      urls: [],
       url: '',
       error: null,
+      urls: [],
+      longestStreak: '',
+      streakFromDate: '',
+      startDayOfWeek: '',
+      dayOfWeek: {
+        start: '',
+        end: '',
+      },
+      startDate: '',
+      endDate: '',
+      startTime: '',
+      endTime: '',
     }
   },
   async mounted() {
     this.urls = await this.getURLListfromStorage()
+    const {
+      firstTimestamp,
+      secondTimestamp,
+      startOfRecording,
+    } = await this.getLongestStreak(this.urls)
+
+    this.streakFromDate = format(new Date(startOfRecording), 'dd.MM.yyyy')
+    this.dayOfWeek.start = format(new Date(firstTimestamp), 'iiii')
+    this.dayOfWeek.end = format(new Date(secondTimestamp), 'iiii')
+
+    this.startDate = format(new Date(firstTimestamp), 'eo LLLL yyyy')
+    this.endDate = format(new Date(secondTimestamp), 'eo LLLL yyyy')
+
+    this.startTime = format(new Date(firstTimestamp), 'eo LLLL yyyy')
+    this.endTime = format(new Date(secondTimestamp), 'eo LLLL yyyy')
+
+    this.longestStreak = formatDistance(
+      new Date(firstTimestamp),
+      new Date(secondTimestamp)
+    )
   },
   methods: {
     addURL() {
@@ -142,14 +179,6 @@ export default {
     deleteURL(url) {
       this.urls = this.urls.filter(item => item !== url)
       this.saveURLListtoStorage()
-    },
-    async getURLListfromStorage() {
-      try {
-        const { urls } = await browser.storage.local.get()
-        return Array.isArray(urls) ? urls : []
-      } catch (error) {
-        console.error(error)
-      }
     },
     saveURLListtoStorage() {
       try {
@@ -164,11 +193,3 @@ export default {
   },
 }
 </script>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;900&display=swap');
-
-body {
-  font-family: 'Chivo', sans-serif;
-}
-</style>
