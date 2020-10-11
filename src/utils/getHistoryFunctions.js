@@ -23,7 +23,7 @@ function getLongestStreak(historyResults = []) {
     diff: 0,
     firstTimestamp: 0,
     secondTimestamp: 0,
-    startDate: timestamps[0],
+    startOfRecording: timestamps[0],
   }
 
   for (let i = 0; i < timestamps.length; i++) {

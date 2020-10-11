@@ -15,10 +15,13 @@ it('returns the latest visited site among the provided urls', () => {
 })
 
 it('verifies the properties of the streak object', () => {
-  const { firstTimestamp, secondTimestamp, startDate, diff } = getLongestStreak(
-    visitItems
-  )
-  expect(startDate).toBe(1594125399723.5461)
+  const {
+    firstTimestamp,
+    secondTimestamp,
+    startOfRecording,
+    diff,
+  } = getLongestStreak(visitItems)
+  expect(startOfRecording).toBe(1594125399723.5461)
   expect(firstTimestamp).toBe(1600447529443.713)
   expect(secondTimestamp).toBe(1601383980119.988)
   expect(secondTimestamp - firstTimestamp).toBe(diff)
