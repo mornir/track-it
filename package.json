@@ -26,6 +26,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "jest": "^26.4.2",
     "prettier": "^1.19.1",
+    "svg-to-vue-component": "^0.3.8",
     "vue-cli-plugin-browser-extension": "~0.25.0",
     "vue-template-compiler": "^2.6.11"
   }

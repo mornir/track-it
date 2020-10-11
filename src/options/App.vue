@@ -30,18 +30,7 @@
             class="flex py-1 odd:bg-gray-300 even:bg-gray-100"
           >
             <button @click="deleteURL(url)" class="mx-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                class="w-4 h-4 hover:text-red-600"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                  clip-rule="evenodd"
-                />
-              </svg>
+              <DeleteIcon class="w-4 h-4 hover:text-red-600" />
             </button>
             <span class="text-base italic whitespace-no-wrap">{{
               removeProtocol(url)
@@ -64,19 +53,8 @@
         <p class="text-lg">
           Between
           <span title="earliest entry in your browsing history"
-            >{{ streakFromDate
-            }}<svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              class="inline-block w-4 h-4"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                clip-rule="evenodd"
-              /></svg
-          ></span>
+            >{{ streakFromDate }}<InfoIcon class="inline-block w-4 h-4"
+          /></span>
           and now, your longest streak started on {{ dayOfWeek.start }} the
           <b class="whitespace-no-wrap">{{ startDate }}</b> at
           {{ startTime }} and ended on {{ dayOfWeek.end }} the
@@ -127,9 +105,16 @@
 import { formatDistance, format } from 'date-fns'
 import mixin from '@/utils/mixin.js'
 
+import DeleteIcon from '@/assets/svg/delete.svg'
+import InfoIcon from '@/assets/svg/info.svg'
+
 export default {
   mixins: [mixin],
   name: 'Options',
+  components: {
+    DeleteIcon,
+    InfoIcon,
+  },
   data() {
     return {
       url: '',
