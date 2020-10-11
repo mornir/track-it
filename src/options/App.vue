@@ -71,30 +71,36 @@
         <h2 class="mb-2 text-2xl">About this extension</h2>
 
         <p class="text-lg">
-          The code of this extension is open-source on GitHub. Feature requests
-          and bug reports can
+          <a
+            class="italic underline"
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/mornir/track-it"
+            title="bqlqn"
+            >See the code on GitHub</a
+          >
         </p>
 
         <p class="text-lg">
-          The "logo" of the extension was made by
+          <a
+            class="italic underline"
+            target="_blank"
+            rel="noopener"
+            href="https://github.com/mornir/track-it/issues/new"
+            title="bqlqn"
+            >Report bugs or propose new features</a
+          >
+        </p>
+
+        <p class="text-lg">
           <a
             class="italic underline"
             target="_blank"
             rel="noopener"
             href="https://www.flaticon.com/authors/bqlqn"
             title="bqlqn"
-            >bqlqn</a
+            >Clock icon by bqlqn</a
           >
-          from
-          <a
-            class="italic underline"
-            target="_blank"
-            rel="noopener"
-            href="https://www.flaticon.com/"
-            title="Flaticon"
-          >
-            www.flaticon.com</a
-          >.
         </p>
       </section>
     </div>
