@@ -52,11 +52,8 @@
         <h2 class="mb-2 text-2xl">Longest Streak</h2>
         <div v-if="longestStreak">
           <p class="text-lg">
-            Between
-            <span title="earliest entry in your browsing history"
-              >{{ streakFromDate }}<InfoIcon class="inline-block w-4 h-4"
-            /></span>
-            and now, your longest streak started on {{ dayOfWeek.start }} the
+            Between {{ streakFromDate }} and now, your longest streak started on
+            {{ dayOfWeek.start }} the
             <b class="whitespace-no-wrap">{{ startDate }}</b> at
             {{ startTime }} and ended on {{ dayOfWeek.end }} the
             <b class="whitespace-no-wrap">{{ endDate }}</b>
@@ -66,6 +63,16 @@
             It lasted for
             <b class="whitespace-no-wrap">{{ longestStreak }}</b
             >.
+          </p>
+          <p class="inline-flex items-center text-base">
+            <InfoIcon class="w-4 h-4 mr-1" />
+            <a
+              class="italic underline"
+              target="_blank"
+              rel="noopener"
+              href="https://github.com/mornir/track-it#calculation-of-the-longest-streak"
+              >How is the longest streak is calculated?</a
+            >
           </p>
         </div>
         <p v-else class="text-lg">No streak recorded yet</p>
@@ -79,7 +86,6 @@
             target="_blank"
             rel="noopener"
             href="https://github.com/mornir/track-it"
-            title="bqlqn"
             >See the code on GitHub</a
           >
         </p>
@@ -90,7 +96,6 @@
             target="_blank"
             rel="noopener"
             href="https://github.com/mornir/track-it/issues/new"
-            title="bqlqn"
             >Report bugs or propose new features</a
           >
         </p>
@@ -101,7 +106,6 @@
             target="_blank"
             rel="noopener"
             href="https://www.flaticon.com/authors/bqlqn"
-            title="bqlqn"
             >Clock icon by bqlqn</a
           >
         </p>
