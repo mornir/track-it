@@ -53,11 +53,11 @@
         <div v-if="longestStreak">
           <p class="text-lg">
             Between {{ streakFromDate }} and now, your longest streak started on
-            {{ dayOfWeek.start }} the
-            <b class="whitespace-no-wrap">{{ startDate }}</b> at
-            {{ startTime }} and ended on {{ dayOfWeek.end }} the
-            <b class="whitespace-no-wrap">{{ endDate }}</b>
-            at {{ endTime }}
+            {{ start.day }} the
+            <b class="whitespace-no-wrap">{{ start.date }}</b> at
+            {{ start.time }} and ended on {{ end.day }} the
+            <b class="whitespace-no-wrap">{{ end.date }}</b>
+            at {{ end.time }}
           </p>
           <p class="mb-2 text-lg">
             It lasted for
@@ -135,15 +135,16 @@ export default {
       urls: [],
       longestStreak: '',
       streakFromDate: '',
-      startDayOfWeek: '',
-      dayOfWeek: {
-        start: '',
-        end: '',
+      start: {
+        time: '',
+        date: '',
+        day: '',
       },
-      startDate: '',
-      endDate: '',
-      startTime: '',
-      endTime: '',
+      end: {
+        time: '',
+        date: '',
+        day: '',
+      },
     }
   },
   async mounted() {
@@ -159,23 +160,24 @@ export default {
 
       const { firstTimestamp, secondTimestamp, startOfRecording } = streak
 
+      const startDate = new Date(firstTimestamp)
+      const endDate = new Date(secondTimestamp)
+
       this.streakFromDate = format(new Date(startOfRecording), 'dd.MM.yyyy')
-      this.dayOfWeek.start = format(new Date(firstTimestamp), 'iiii')
-      this.dayOfWeek.end = format(new Date(secondTimestamp), 'iiii')
+      this.start.day = format(startDate, 'iiii')
+      this.end.day = format(endDate, 'iiii')
 
-      this.startDate = format(new Date(firstTimestamp), 'eo LLLL yyyy')
-      this.endDate = format(new Date(secondTimestamp), 'eo LLLL yyyy')
+      this.start.date = format(startDate, 'do LLLL yyyy')
+      this.end.date = format(endDate, 'do LLLL yyyy')
 
-      this.startTime = format(new Date(firstTimestamp), 'h:mm aaaa')
-      this.endTime = format(new Date(secondTimestamp), 'h:mm aaaa')
+      this.start.time = format(startDate, 'h:mm aaaa')
+      this.end.time = format(endDate, 'h:mm aaaa')
 
-      this.longestStreak = formatDistance(
-        new Date(firstTimestamp),
-        new Date(secondTimestamp)
-      )
+      this.longestStreak = formatDistance(startDate, endDate)
     } catch (error) {
       console.error(error)
       this.longestStreak = ''
+      this.error = error
     }
   },
   methods: {
@@ -193,6 +195,7 @@ export default {
         browser.storage.local.set({ urls: this.urls })
       } catch (error) {
         console.error(error)
+        this.error = error
       }
     },
     removeProtocol(url) {
