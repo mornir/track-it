@@ -5,12 +5,12 @@
 Are there websites that you wish you would visit less often? The web counts numerous addictive, unproductive, distractive websites. This web extension shows you the last time you visited such websites and encourages you to keep off of them.
 
 ## ✨ FEATURES
-✔ Choose the websites you want to track
-✔ Show the collective last visit time
-✔ Show the longest streak to keep you motivated
-✔ Minimalist UI
-✔ Privacy-focused
-✔ Open-source
+✔ Choose the websites you want to track  
+✔ Show the collective last visit time  
+✔ Show the longest streak to keep you motivated  
+✔ Minimalist UI  
+✔ Privacy-focused  
+✔ Open-source  
 
 ## 🤫 PRIVACY
 This extension only reads your local history and doesn't share it. If you enabled sync for extension, the list of websites you track will be synchronized with Google account. If you disabled sync, it will only be stored locally.
@@ -29,19 +29,19 @@ In my opinion, this is not an issue, because if you can refrain from visiting an
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+## Compiles and hot-reloads for development
 
 ```
-yarn serve
+yarn dev
 ```
 
-### Compiles and minifies for production
+## Compiles and minifies for production
 
 ```
 yarn build
 ```
 
-### Lints and fixes files
+## Lints and fixes files
 
 ```
 yarn lint
