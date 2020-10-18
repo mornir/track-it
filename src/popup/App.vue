@@ -50,7 +50,6 @@ export default {
       abstinenceDuration: '',
       urls: [],
       longestStreak: '',
-      streakFromDate: '',
     }
   },
   async mounted() {
