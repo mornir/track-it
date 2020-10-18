@@ -1,4 +1,4 @@
-function getLatestVisitedSite(historyResults = []) {
+function getLatestVisitTime(historyResults = []) {
   const latestVisitSites = historyResults.flat()
 
   if (latestVisitSites.length === 0) {
@@ -9,7 +9,7 @@ function getLatestVisitedSite(historyResults = []) {
     .map(item => item.visitTime)
     .sort((a, b) => a - b)
 
-  return timestamps[0]
+  return timestamps[timestamps.length - 1]
 }
 
 function getLongestStreak(historyResults = []) {
@@ -44,4 +44,4 @@ function getLongestStreak(historyResults = []) {
   return streak
 }
 
-export { getLatestVisitedSite, getLongestStreak }
+export { getLatestVisitTime, getLongestStreak }

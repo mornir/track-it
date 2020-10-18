@@ -33,7 +33,7 @@
 <script>
 import { formatDistance } from 'date-fns'
 import {
-  getLatestVisitedSite,
+  getLatestVisitTime,
   getLongestStreak,
 } from '@/utils/getHistoryFunctions.js'
 import SettingsIcon from '@/assets/svg/settings.svg'
@@ -47,7 +47,6 @@ export default {
   },
   data() {
     return {
-      latestVisitTime: '',
       abstinenceDuration: '',
       urls: [],
       longestStreak: '',
@@ -72,15 +71,15 @@ export default {
       /** Last Visit **/
 
       const results = await Promise.all(urlsPromises)
-      this.latestVisitTime = getLatestVisitedSite(results)
+      const latestVisitTime = getLatestVisitTime(results)
 
-      if (!this.latestVisitTime) {
+      if (!latestVisitTime) {
         this.abstinenceDuration = 'History is empty'
         return
       }
 
       this.abstinenceDuration = formatDistance(
-        new Date(this.latestVisitTime),
+        new Date(latestVisitTime),
         new Date(),
         { addSuffix: true }
       )
