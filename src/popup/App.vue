@@ -5,11 +5,11 @@
     <button
       @click="openOptionsPage"
       class="block mb-2 ml-auto"
-      v-if="abstinenceDuration"
+      v-if="!isListEmpty"
     >
       <SettingsIcon class="w-6 h-6" />
     </button>
-    <div v-if="abstinenceDuration">
+    <div v-if="!isListEmpty">
       <p class="mb-6 font-light">
         Last visit
         <b class="block font-black font-blackish">{{ abstinenceDuration }}</b>
@@ -57,7 +57,7 @@ export default {
     this.urls = await this.getURLListfromStorage()
 
     if (this.urls.length === 0) {
-      this.abstinenceDuration = false
+      this.abstinenceDuration = ''
       return
     }
 
@@ -109,6 +109,9 @@ export default {
   computed: {
     defaultText() {
       return browser.i18n.getMessage('extName')
+    },
+    isListEmpty() {
+      return this.urls.length === 0
     },
   },
   methods: {
