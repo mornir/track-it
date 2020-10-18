@@ -38,10 +38,12 @@
           </li>
         </ul>
         <div v-if="error">
-          <p>Yikes! An error occured:</p>
-          <pre>{{ error }}</pre>
+          <p class="mt-4 text-lg">Yikes! An error occured:</p>
+          <pre class="break-words">{{ error }}</pre>
           <p>
-            <a href="https://github.com/mornir/track-it/issues/new"
+            <a
+              href="https://github.com/mornir/track-it/issues/new"
+              class="underline"
               >Report the error
             </a>
           </p>
@@ -200,7 +202,7 @@ export default {
     },
     saveURLListtoStorage() {
       try {
-        browser.storage.sync.set({ urls: this.urls })
+        browser.storage.local.set({ urls: this.urls })
       } catch (error) {
         console.error(error)
         this.error = error
