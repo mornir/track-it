@@ -1,4 +1,4 @@
-# Track it!
+# 🕓 Track it!
 
 > Web extension to track time wasted on addictive websites
 
@@ -20,8 +20,9 @@ This extension only reads your local history and doesn't share it. If you enable
 ## Calculation of the longest streak
 
 The duration of longest streak is calculated between visits to exact URLs. For example, if you add "https://www.youtube.com", but always access YouTube through "https://www.youtube.com/feed/subscriptions" (e.g. via a bookmark), the later URL won't be taken into account.
-The longest streak is only recorded over the last three months, because Chrome doesn't keep browser history records that are older than three months.
-In my opinion, this is not an issue, because if you can refrain from visiting an addictive website for more than three months, you already succeeded.
+
+In Chrome, the longest streak is only recorded over the last three months, because Chrome doesn't keep browser history records that are older than three months.
+In my opinion, this is not an issue, because if you can refrain from visiting an addictive website for more than three months, you already succeeded. 😉
 
 # Credits
 
