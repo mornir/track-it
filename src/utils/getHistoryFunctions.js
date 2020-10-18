@@ -1,12 +1,15 @@
 function getLatestVisitedSite(historyResults = []) {
   const latestVisitSites = historyResults.flat()
+
   if (latestVisitSites.length === 0) {
     return false
   }
 
-  return latestVisitSites.reduce((prev, current) => {
-    return prev.lastVisitTime > current.lastVisitTime ? prev : current
-  })
+  const timestamps = latestVisitSites
+    .map(item => item.visitTime)
+    .sort((a, b) => a - b)
+
+  return timestamps[0]
 }
 
 function getLongestStreak(historyResults = []) {

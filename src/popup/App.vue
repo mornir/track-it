@@ -32,7 +32,10 @@
 
 <script>
 import { formatDistance } from 'date-fns'
-import { getLatestVisitedSite } from '@/utils/getHistoryFunctions.js'
+import {
+  getLatestVisitedSite,
+  getLongestStreak,
+} from '@/utils/getHistoryFunctions.js'
 import SettingsIcon from '@/assets/svg/settings.svg'
 import mixin from '@/utils/mixin.js'
 
@@ -44,9 +47,7 @@ export default {
   },
   data() {
     return {
-      latestVisitSites: [],
-      latestVisitSite: {},
-      latestVisitDate: null,
+      latestVisitTime: '',
       abstinenceDuration: '',
       urls: [],
       longestStreak: '',
@@ -62,36 +63,34 @@ export default {
     }
 
     const urlsPromises = this.urls.map(url =>
-      browser.history.search({
-        text: url,
-        maxResults: 1,
-        startTime: 0,
+      browser.history.getVisits({
+        url,
       })
     )
 
     try {
+      /** Last Visit **/
+
       const results = await Promise.all(urlsPromises)
+      this.latestVisitTime = getLatestVisitedSite(results)
 
-      this.latestVisitSite = getLatestVisitedSite(results)
-
-      if (!this.latestVisitSite) {
+      if (!this.latestVisitTime) {
         this.abstinenceDuration = 'History is empty'
         return
       }
 
-      this.latestVisitDate = new Date(this.latestVisitSite.lastVisitTime)
       this.abstinenceDuration = formatDistance(
-        this.latestVisitDate,
+        new Date(this.latestVisitTime),
         new Date(),
         { addSuffix: true }
       )
 
-      /** Streak **/
+      /** Longest Streak **/
 
-      const streak = await this.getLongestStreak(this.urls)
+      const streak = getLongestStreak(results)
 
       if (!streak) {
-        this.longestStreak = ''
+        this.longestStreak = 'Not enough data'
         return
       }
 

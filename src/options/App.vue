@@ -114,6 +114,7 @@
 </template>
 
 <script>
+import { getLongestStreak } from '@/utils/getHistoryFunctions.js'
 import { formatDistance, format } from 'date-fns'
 import mixin from '@/utils/mixin.js'
 
@@ -150,7 +151,15 @@ export default {
     try {
       this.urls = await this.getURLListfromStorage()
 
-      const streak = await this.getLongestStreak(this.urls)
+      const urlsPromises = this.urls.map(url =>
+        browser.history.getVisits({
+          url,
+        })
+      )
+
+      const results = await Promise.all(urlsPromises)
+
+      const streak = getLongestStreak(results)
 
       if (!streak) {
         this.longestStreak = ''
@@ -191,7 +200,7 @@ export default {
     },
     saveURLListtoStorage() {
       try {
-        browser.storage.local.set({ urls: this.urls })
+        browser.storage.sync.set({ urls: this.urls })
       } catch (error) {
         console.error(error)
         this.error = error
