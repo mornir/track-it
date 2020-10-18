@@ -2,17 +2,31 @@
   <div
     class="px-4 pt-4 pb-4 text-xl text-gray-800 whitespace-no-wrap bg-gray-200"
   >
-    <button @click="openOptionsPage" class="block mb-2 ml-auto">
+    <button
+      @click="openOptionsPage"
+      class="block mb-2 ml-auto"
+      v-if="abstinenceDuration"
+    >
       <SettingsIcon class="w-6 h-6" />
     </button>
-    <p class="mb-6 font-light">
-      Last visit
-      <b class="block font-black font-blackish">{{ abstinenceDuration }}</b>
-    </p>
-    <p class="font-light" v-if="longestStreak">
-      Longest streak
-      <b class="block font-black font-blackish">{{ longestStreak }}</b>
-    </p>
+    <div v-if="abstinenceDuration">
+      <p class="mb-6 font-light">
+        Last visit
+        <b class="block font-black font-blackish">{{ abstinenceDuration }}</b>
+      </p>
+      <p class="font-light" v-if="longestStreak">
+        Longest streak
+        <b class="block font-black font-blackish">{{ longestStreak }}</b>
+      </p>
+    </div>
+    <div v-else>
+      <button
+        @click="openOptionsPage"
+        class="px-4 py-1 text-lg text-white bg-blackish hover:bg-gray-700 focus:hover:bg-gray-700"
+      >
+        Start by adding websites to track
+      </button>
+    </div>
   </div>
 </template>
 
@@ -23,11 +37,11 @@ import SettingsIcon from '@/assets/svg/settings.svg'
 import mixin from '@/utils/mixin.js'
 
 export default {
+  name: 'Popup',
   mixins: [mixin],
   components: {
     SettingsIcon,
   },
-  name: 'Popup',
   data() {
     return {
       latestVisitSites: [],
@@ -43,7 +57,7 @@ export default {
     this.urls = await this.getURLListfromStorage()
 
     if (this.urls.length === 0) {
-      this.abstinenceDuration = 'No URLs'
+      this.abstinenceDuration = false
       return
     }
 
@@ -66,7 +80,11 @@ export default {
       }
 
       this.latestVisitDate = new Date(this.latestVisitSite.lastVisitTime)
-      this.abstinenceDuration = formatDistance(this.latestVisitDate, new Date())
+      this.abstinenceDuration = formatDistance(
+        this.latestVisitDate,
+        new Date(),
+        { addSuffix: true }
+      )
 
       /** Streak **/
 
