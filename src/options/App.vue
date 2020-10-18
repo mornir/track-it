@@ -130,8 +130,8 @@ export default {
   data() {
     return {
       url: '',
-      error: null,
       urls: [],
+      error: null,
       longestStreak: '',
       streakFromDate: '',
       start: {
