@@ -38,13 +38,14 @@
           </li>
         </ul>
         <div v-if="error">
-          <p>Yikes! An error occured:</p>
-          <pre>{{ error }}</pre>
+          <p class="mt-4 text-lg">Yikes! An error occured:</p>
+          <pre class="break-words">{{ error }}</pre>
           <p>
-            You can report the error here:
-            <a href="https://github.com/mornir/track-it/issues/new"
-              >https://github.com/mornir/track-it/issues/new</a
-            >
+            <a
+              href="https://github.com/mornir/track-it/issues/new"
+              class="underline"
+              >Report the error
+            </a>
           </p>
         </div>
       </section>
@@ -115,6 +116,7 @@
 </template>
 
 <script>
+import { getLongestStreak } from '@/utils/getHistoryFunctions.js'
 import { formatDistance, format } from 'date-fns'
 import mixin from '@/utils/mixin.js'
 
@@ -122,8 +124,8 @@ import DeleteIcon from '@/assets/svg/delete.svg'
 import InfoIcon from '@/assets/svg/info.svg'
 
 export default {
-  mixins: [mixin],
   name: 'Options',
+  mixins: [mixin],
   components: {
     DeleteIcon,
     InfoIcon,
@@ -131,8 +133,8 @@ export default {
   data() {
     return {
       url: '',
-      error: null,
       urls: [],
+      error: null,
       longestStreak: '',
       streakFromDate: '',
       start: {
@@ -151,7 +153,15 @@ export default {
     try {
       this.urls = await this.getURLListfromStorage()
 
-      const streak = await this.getLongestStreak(this.urls)
+      const urlsPromises = this.urls.map(url =>
+        browser.history.getVisits({
+          url,
+        })
+      )
+
+      const results = await Promise.all(urlsPromises)
+
+      const streak = getLongestStreak(results)
 
       if (!streak) {
         this.longestStreak = ''

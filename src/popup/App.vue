@@ -2,78 +2,93 @@
   <div
     class="px-4 pt-4 pb-4 text-xl text-gray-800 whitespace-no-wrap bg-gray-200"
   >
-    <button @click="openOptionsPage" class="block mb-2 ml-auto">
+    <button
+      @click="openOptionsPage"
+      class="block mb-2 ml-auto"
+      v-if="!isListEmpty"
+    >
       <SettingsIcon class="w-6 h-6" />
     </button>
-    <p class="mb-6 font-light">
-      Last visit
-      <b class="block font-black font-blackish">{{ abstinenceDuration }}</b>
-    </p>
-    <p class="font-light" v-if="longestStreak">
-      Longest streak
-      <b class="block font-black font-blackish">{{ longestStreak }}</b>
-    </p>
+    <div v-if="!isListEmpty">
+      <p class="mb-6 font-light">
+        Last visit
+        <b class="block font-black font-blackish">{{ abstinenceDuration }}</b>
+      </p>
+      <p class="font-light" v-if="longestStreak">
+        Longest streak
+        <b class="block font-black font-blackish">{{ longestStreak }}</b>
+      </p>
+    </div>
+    <div v-else>
+      <button
+        @click="openOptionsPage"
+        class="px-4 py-1 text-lg text-white bg-blackish hover:bg-gray-700 focus:hover:bg-gray-700"
+      >
+        Start by adding websites to track
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
 import { formatDistance } from 'date-fns'
-import { getLatestVisitedSite } from '@/utils/getHistoryFunctions.js'
+import {
+  getLatestVisitTime,
+  getLongestStreak,
+} from '@/utils/getHistoryFunctions.js'
 import SettingsIcon from '@/assets/svg/settings.svg'
 import mixin from '@/utils/mixin.js'
 
 export default {
+  name: 'Popup',
   mixins: [mixin],
   components: {
     SettingsIcon,
   },
-  name: 'Popup',
   data() {
     return {
-      latestVisitSites: [],
-      latestVisitSite: {},
-      latestVisitDate: null,
       abstinenceDuration: '',
       urls: [],
       longestStreak: '',
-      streakFromDate: '',
     }
   },
   async mounted() {
     this.urls = await this.getURLListfromStorage()
 
     if (this.urls.length === 0) {
-      this.abstinenceDuration = 'No URLs'
+      this.abstinenceDuration = ''
       return
     }
 
     const urlsPromises = this.urls.map(url =>
-      browser.history.search({
-        text: url,
-        maxResults: 1,
-        startTime: 0,
+      browser.history.getVisits({
+        url,
       })
     )
 
     try {
+      /** Last Visit **/
+
       const results = await Promise.all(urlsPromises)
+      const latestVisitTime = getLatestVisitTime(results)
 
-      this.latestVisitSite = getLatestVisitedSite(results)
-
-      if (!this.latestVisitSite) {
+      if (!latestVisitTime) {
         this.abstinenceDuration = 'History is empty'
         return
       }
 
-      this.latestVisitDate = new Date(this.latestVisitSite.lastVisitTime)
-      this.abstinenceDuration = formatDistance(this.latestVisitDate, new Date())
+      this.abstinenceDuration = formatDistance(
+        new Date(latestVisitTime),
+        new Date(),
+        { addSuffix: true }
+      )
 
-      /** Streak **/
+      /** Longest Streak **/
 
-      const streak = await this.getLongestStreak(this.urls)
+      const streak = getLongestStreak(results)
 
       if (!streak) {
-        this.longestStreak = ''
+        this.longestStreak = 'Not enough data'
         return
       }
 
@@ -91,6 +106,9 @@ export default {
   computed: {
     defaultText() {
       return browser.i18n.getMessage('extName')
+    },
+    isListEmpty() {
+      return this.urls.length === 0
     },
   },
   methods: {
