@@ -15,11 +15,14 @@ Are there websites that you wish you would visit less often? The web counts nume
 
 ## 🤫 PRIVACY
 
-This extension only reads your local history and doesn't share it. If you enabled sync for extension, the list of websites you track will be synchronized with Google account. If you disabled sync, it will only be stored locally.
+This extension only reads your local history and doesn't share it. The list of websites you track is only stored locally and is not sync with your Google/Firefox account.
 
 ## Calculation of the longest streak
 
-The duration of longest streak is calculated between visits to exact URLs. For example, if you add "https://www.youtube.com", but always access YouTube through "https://www.youtube.com/feed/subscriptions" (e.g. via a bookmark), the later URL won't be taken into account.
+The duration of longest streak is calculated between visits to exact URLs. For example, if you add `https://www.youtube.com`, but always access YouTube through `https://www.youtube.com/feed/subscriptions` (e.g. via a bookmark), the later URL won't be taken into account.
+
+Beware also of query parameters:
+`https://www.youtube.com` and `https://www.youtube.com/?gl=CH` are considered as two different URL.
 
 In Chrome, the longest streak is only recorded over the last three months, because Chrome doesn't keep browser history records that are older than three months.
 In my opinion, this is not an issue, because if you can refrain from visiting an addictive website for more than three months, you already succeeded. 😉

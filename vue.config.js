@@ -14,6 +14,7 @@ module.exports = {
   pluginOptions: {
     browserExtension: {
       componentOptions: {},
+      manifestSync: ['version', 'description'],
     },
   },
   chainWebpack(config) {
