@@ -2,7 +2,7 @@ import {
   getLatestVisitTime,
   getLongestStreak,
 } from '../../src/utils/getHistoryFunctions'
-import historyItems from '../fixtures/historyItems.json'
+
 import visitItems from '../fixtures/visitItems.json'
 
 it('returns false if there are no history results', () => {
@@ -10,8 +10,8 @@ it('returns false if there are no history results', () => {
   expect(getLatestVisitTime([Array(0), Array(0), Array(0)])).toBe(false)
 })
 
-it('returns the latest visited site among the provided urls', () => {
-  expect(getLatestVisitTime(historyItems).id).toBe('31583')
+it('returns the timestamp of latest visited site among the provided urls', () => {
+  expect(getLatestVisitTime(visitItems)).toBe(1601749068036.26)
 })
 
 it('verifies the properties of the streak object', () => {
